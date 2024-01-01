@@ -60,8 +60,8 @@ def convert():
       mile_per_h = float(request.form["speed"])
       min_per_mile = km_per_h_to_min_per_km(mile_per_h)
       result = " mi/h \u2192 "+ str(round(min_per_mile,2))+" min/mi"
-    return render_template("form.html", result=result)
-  return render_template("form.html")
+    return render_template("index.html", result=result)
+  return render_template("index.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
