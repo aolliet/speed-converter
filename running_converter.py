@@ -1,7 +1,7 @@
 import re
 
 from flask import Flask, request, render_template
-app = Flask(__name__)
+app = Flask(__name__, template_folder='')
 
 def convertir_en_numerique(valeur):
     # Teste si la valeur est au format "mm:ss"
