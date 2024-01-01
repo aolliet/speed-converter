@@ -1,0 +1,35 @@
+#speed-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+}
+
+#speed-form label {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+#speed-form input[type="text"] {
+    padding: 12px 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 0 4px #ccc;
+    font-size: 1.2em;
+}
+
+#speed-form button[type="submit"] {
+    padding: 12px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+#speed-form button[type="submit"]:hover {
+    background-color: #3e8e41;
+}
