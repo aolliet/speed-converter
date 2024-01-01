@@ -21,6 +21,12 @@ def convertir_en_numerique(valeur):
             pass
     return None  # Retourne None si la conversion n'est pas possible
 
+def convertir_en_mm_ss(duree_en_minutes):
+    minutes = int(duree_en_minutes)
+    secondes = int((duree_en_minutes - minutes) * 60)
+    temps_formatte = "{:02d}:{:02d}".format(minutes, secondes)
+    return temps_formatte
+
 def min_per_km_to_km_per_h(min_per_km):
   km_per_h = 60 / min_per_km
   return km_per_h
@@ -50,16 +56,16 @@ def convert():
       result = " min/km \u2192 "+ str(round(km_per_h,2))+" km/h"
     elif unitaconv == "kmh":
       km_per_h = float(request.form["speed"])
-      min_per_km = km_per_h_to_min_per_km(km_per_h)
-      result = " km/h \u2192 "+ str(round(min_per_km,2))+" min/km"
+      min_per_km = convertir_en_mm_ss(km_per_h_to_min_per_km(km_per_h))
+      result = " km/h \u2192 "+ str(min_per_km)+" min/km"
     elif unitaconv == "minmile":
       min_per_mile = float(convertir_en_numerique(request.form["speed"]))
       mile_per_h = min_per_km_to_km_per_h(min_per_mile)
       result = " min/mi \u2192 "+ str(round(mile_per_h,2))+" mi/h"
     elif unitaconv == "mileh":
       mile_per_h = float(request.form["speed"])
-      min_per_mile = km_per_h_to_min_per_km(mile_per_h)
-      result = " mi/h \u2192 "+ str(round(min_per_mile,2))+" min/mi"
+      min_per_mile = convertir_en_mm_ss(km_per_h_to_min_per_km(mile_per_h))
+      result = " mi/h \u2192 "+ str(min_per_mile)+" min/mi"
     return render_template("index.html", result=result)
   return render_template("index.html")
 
