@@ -32,7 +32,11 @@ Pour suivre le trafic de votre site (nombre de visiteurs, provenance...) :
 
 1.  Créez un compte sur [Google Analytics](https://analytics.google.com/).
 2.  Créez une propriété pour `run-convert.com`.
-3.  Récupérez votre **ID de mesure** (G-XXXXXXXXXX).
+3.  Récupérez votre **ID de mesure** (G-XXXXXXXXXX) :
+    *   Cliquez sur la roue dentée **Administration** (en bas à gauche).
+    *   Dans la colonne "Propriété", cliquez sur **Flux de données** (Data Streams).
+    *   Cliquez sur le flux correspondant à votre site (Web).
+    *   L'**ID de mesure** s'affiche en haut à droite (commence par `G-`).
 4.  Il faudra ajouter un petit script dans votre `index.html` (demandez-moi si vous souhaitez le faire).
 
 ## Conseils pour le référencement
